@@ -48,8 +48,8 @@ const Teams = () => {
         {teams &&
           teams.map(
             ({ name, abbreviation, city, conference, division, id }) => (
-              <Grid item xs={12} md={6} lg={4} xl={3}>
-                <Paper key={id}>
+              <Grid item key={id} xs={12} md={6} lg={4} xl={3}>
+                <Paper>
                   <Typography variant="h4" component="h4">
                     {name}({abbreviation})
                   </Typography>
