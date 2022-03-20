@@ -10,8 +10,8 @@ import theme from './theme'
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <AppBar />
       <Router>
+        <AppBar />
         <Routes>
           <Route path="/teams/" element={<Teams />}></Route>
           <Route path="/" element={<Banner />}></Route>
