@@ -1,4 +1,4 @@
-import {atom, selector} from 'recoil';
+import {atom} from 'recoil';
 
 
 interface Team {
@@ -15,4 +15,3 @@ export const allTeams = atom<Team[]>({
     key: 'allTeams',
     default: [],
 });
-
