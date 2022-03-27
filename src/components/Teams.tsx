@@ -7,29 +7,24 @@ import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
 import Backdrop from '@mui/material/Backdrop'
 import CircularProgress from '@mui/material/CircularProgress'
-
-interface Team {
-  id: number
-  abbreviation: string
-  city: string
-  conference: string
-  division: string
-  full_name: string
-  name: string
-}
+import { useRecoilState } from 'recoil'
+import { allTeams } from '../recoil/atoms/teams'
 
 const Teams = () => {
-  const [teams, setTeams] = useState<Team[]>([])
+  const [teams, setTeams] = useRecoilState(allTeams)
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
+    const requestTeams = async () => {
+      const response = await fetch('https://www.balldontlie.io/api/v1/teams')
+      const data = await response.json()
+      setTeams(data.data)
+      setLoading(false)
+    }
     requestTeams()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  const requestTeams = async () => {
-    const response = await fetch('https://www.balldontlie.io/api/v1/teams')
-    const data = await response.json()
-    setTeams(data.data)
-    setLoading(false)
-  }
+
   return (
     <Container
       maxWidth="lg"
