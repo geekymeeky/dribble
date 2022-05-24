@@ -56,7 +56,9 @@ const Teams = () => {
                   }}
                 >
                   <img
-                    src="https://picsum.photos/id/237/200/300"
+                    src={`${
+                      process.env.PUBLIC_URL
+                    }/${abbreviation.toLowerCase()}.png`}
                     alt="Hello"
                     style={{
                       padding: '0rem 0rem 2rem 0rem',
