@@ -59,7 +59,7 @@ const Teams = () => {
                     src={`${
                       process.env.PUBLIC_URL
                     }/teams/${abbreviation.toLowerCase()}.png`}
-                    alt="Hello"
+                    alt={abbreviation}
                     style={{
                       padding: '0rem 0rem 2rem 0rem',
                       width: '100%',
