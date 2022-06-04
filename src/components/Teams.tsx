@@ -58,7 +58,7 @@ const Teams = () => {
                   <img
                     src={`${
                       process.env.PUBLIC_URL
-                    }/${abbreviation.toLowerCase()}.png`}
+                    }/teams/${abbreviation.toLowerCase()}.png`}
                     alt="Hello"
                     style={{
                       padding: '0rem 0rem 2rem 0rem',
